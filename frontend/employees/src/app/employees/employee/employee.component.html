@@ -1,0 +1,45 @@
+<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>FIRST NAME</label>
+            <input name="first_name" #first_name="ngModel" [(ngModel)]="service.formData.first_name" class="form-control">
+        </div>
+        <div class="form-group col-md-6">
+            <label>LAST NAME</label>
+            <input name="last_name" #last_name="ngModel" [(ngModel)]="service.formData.last_name" class="form-control">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>BIRTH DATE</label>
+            <input name="birth_date" #birth_date="ngModel" [(ngModel)]="service.formData.birth_date" class="form-control">
+        </div>
+        <div class="form-group col-md-6">
+            <label>PERSON ID</label>
+            <input name="person_id" #person_id="ngModel" [(ngModel)]="service.formData.person_id" class="form-control">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>EMPLOYEE ID</label>
+            <input name="employee_id" #employee_id="ngModel" [(ngModel)]="service.formData.employee_id" class="form-control">
+        </div>
+        <div class="form-group col-md-6">
+            <label>EMPLOYEE NUMBER</label>
+            <input name="employee_number" #employee_number="ngModel" [(ngModel)]="service.formData.employee_number" class="form-control">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>EMPLOYED DATE</label>
+            <input name="employed_date" #employed_date="ngModel" [(ngModel)]="service.formData.employed_date" class="form-control">
+        </div>
+        <div class="form-group col-md-6">
+            <label>TERMINATED DATE</label>
+            <input name="terminated_date" #terminated_date="ngModel" [(ngModel)]="service.formData.terminated_date" class="form-control">
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-lg btn-block">SUBMIT</button>
+    </div>
+</form>

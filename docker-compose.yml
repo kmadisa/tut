@@ -1,0 +1,37 @@
+# A docker-compose must always start by the version tag.
+# We use "3" because it's the last version at this time.
+version: "3"
+
+# You should know that docker-composes works with services.
+# 1 service = 1 container.
+# For example, a service maybe, a server, a client, a database...
+# We use the keyword 'services' to start to create services.
+
+services:
+  frontend:
+    build: frontend/
+    image: frontend:latest
+    network_mode: host
+    container_name: frontend
+    ports:
+      - 4200:4200
+    depends_on:
+      - backend
+    expose: [4200]
+    command: > 
+        sleep infinity
+    volumes:
+      - ./frontend/employees:/frontend/
+
+  backend:
+    build: backend/
+    image: backend:latest
+    ports:
+      - 5000:5000
+    container_name: backend
+    network_mode: host
+    command: python /backend/manage.py runserver
+    volumes:
+      - ./backend:/backend
+    expose: [5000]
+      
